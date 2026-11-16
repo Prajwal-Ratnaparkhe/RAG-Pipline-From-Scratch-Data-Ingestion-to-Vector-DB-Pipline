@@ -1,0 +1,97 @@
+ Introduction to Python Programming
+==================================
+
+Python is a high-level, interpreted, general-purpose programming language. It was created by Guido van Rossum and first released in 1991. Python is known for its readable syntax, which makes it popular with beginners and experienced developers.
+
+Why Learn Python?
+-----------------
+Python is used in web development, automation, data analysis, artificial intelligence, machine learning, scientific computing, and software testing. Its large ecosystem of libraries helps developers build applications quickly.
+
+Key Features of Python
+----------------------
+1. Readable syntax: Python code is designed to be easy to read and understand.
+2. Interpreted execution: Python programs are generally run by a Python interpreter.
+3. Dynamic typing: Variable types are determined at runtime.
+4. Cross-platform support: Python runs on Windows, macOS, and Linux.
+5. Extensive libraries: Tools such as NumPy, pandas, Flask, FastAPI, and PyTorch support many application types.
+
+Your First Python Program
+-------------------------
+print("Hello, World!")
+
+Variables and Data Types
+------------------------
+Variables store references to values. Common built-in data types include integers, floating-point numbers, strings, booleans, lists, tuples, dictionaries, and sets.
+
+name = "Alice"
+age = 25
+height = 1.68
+is_student = True
+skills = ["Python", "SQL", "Git"]
+
+Conditional Statements
+----------------------
+Conditional statements control program flow based on conditions.
+
+age = 20
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+Loops
+-----
+A for loop iterates over a sequence, while a while loop repeats as long as a condition is true.
+
+for number in range(3):
+    print(number)
+
+Functions
+---------
+Functions group reusable logic. The def keyword defines a function.
+
+
+
+Object-Oriented Programming
+---------------------------
+Python supports classes and objects. A class defines the data and behavior of objects.
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+
+Error Handling
+--------------
+Exceptions can be handled using try and except blocks.
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+Python Packages and Virtual Environments
+----------------------------------------
+Packages provide reusable code. A virtual environment isolates dependencies for one project. Tools such as uv can create environments, install Python versions, and manage project packages.
+
+Python in AI and RAG
+--------------------
+Retrieval-Augmented Generation (RAG) combines information retrieval with text generation. A basic RAG workflow loads documents, splits them into smaller chunks, converts the chunks into vector embeddings, stores or indexes the vectors, retrieves relevant chunks for a user question, and sends the retrieved context to a language model to generate an answer.
+
+Popular Python tools for RAG include LangChain for orchestration, sentence-transformers or embedding APIs for vector representations, and vector databases such as Chroma or FAISS for similarity search.
+
+Example Questions for RAG Testing
+---------------------------------
+Q: Who created Python?
+A: Guido van Rossum.
+
+Q: What is a Python virtual environment?
+A: An isolated environment for a project's Python dependencies.
+
+Q: What are the main steps in a RAG pipeline?
+A: Load documents, split into chunks, create embeddings, index the data, retrieve relevant chunks, and generate an answer using the retrieved context.
+
+Q: What is the difference between a list and a tuple?
+A: Lists are mutable, while tuples are immutable.
+
+

@@ -1,0 +1,156 @@
+ Introduction to Machine Learning
+================================
+
+What Is Machine Learning?
+-------------------------
+Machine learning (ML) is a field of artificial intelligence in which systems learn patterns from data to make predictions, classifications, or decisions without being given a separate rule for every case. A model is trained on examples and then evaluated on data it has not seen before.
+
+Why Learn Machine Learning?
+---------------------------
+Machine learning is used for spam detection, recommendation systems, fraud detection, image recognition, speech recognition, medical research, demand forecasting, and natural language processing.
+
+Types of Machine Learning
+-------------------------
+1. Supervised learning: A model learns from labeled examples, such as emails marked spam or not spam.
+2. Unsupervised learning: A model discovers structure in unlabeled data, such as customer groups.
+3. Reinforcement learning: An agent learns actions through interaction with an environment and feedback in the form of rewards.
+4. Self-supervised learning: A model creates training signals from the data itself, such as predicting hidden words in text.
+
+Supervised Learning: Regression and Classification
+--------------------------------------------------
+Regression predicts a continuous numeric value, such as a house price or temperature. Classification predicts a category, such as whether an email is spam.
+
+Examples:
+- Linear regression can estimate a house price based on square footage.
+- Logistic regression can estimate the probability that a message is spam.
+- Decision trees can predict a category using a series of feature-based questions.
+
+Unsupervised Learning
+---------------------
+Clustering groups similar data points without predefined labels. K-means is a common clustering algorithm. Dimensionality reduction methods such as PCA summarize important variation using fewer dimensions.
+
+Features, Labels, and Datasets
+------------------------------
+Features are input variables used by a model. A label or target is the answer the model should learn to predict during supervised learning. A dataset is a collection of examples.
+
+Example:
+For predicting house prices, features might include square footage, number of bedrooms, and location. The label is the house price.
+
+Training, Validation, and Test Data
+-----------------------------------
+Training data is used to fit model parameters. Validation data helps choose hyperparameters and compare models. Test data estimates final performance on unseen examples. Data leakage occurs when information that would not be available at prediction time influences training or evaluation.
+
+A Basic Machine Learning Workflow
+---------------------------------
+1. Define the problem and success metric.
+2. Collect and inspect relevant data.
+3. Clean data and handle missing values.
+4. Split data into training, validation, and test sets.
+5. Preprocess features using transformations fitted only on training data.
+6. Train a baseline model.
+7. Evaluate errors and compare models.
+8. Tune hyperparameters using validation data or cross-validation.
+9. Test the selected approach on held-out test data.
+10. Deploy, monitor, and periodically reassess the model if needed.
+
+Overfitting and Underfitting
+---------------------------
+Overfitting happens when a model learns training-specific noise and performs poorly on new data. Underfitting happens when a model is too simple or insufficiently trained to capture important patterns. Regularization, more representative data, and appropriate model complexity can improve generalization.
+
+Common Algorithms
+-----------------
+- Linear regression: Predicts numeric values using a linear relationship.
+- Logistic regression: Common baseline for binary classification.
+- Decision tree: Makes predictions through recursive splits.
+- Random forest: Combines many decision trees to reduce variance.
+- Gradient boosting: Builds an ensemble of models that correct earlier errors.
+- K-nearest neighbors (KNN): Predicts using nearby examples.
+- Support vector machine (SVM): Finds decision boundaries with large margins.
+- K-means clustering: Groups similar samples into K clusters.
+- Neural networks: Learn layered representations from data.
+
+Evaluation Metrics
+------------------
+For classification:
+- Accuracy: Fraction of predictions that are correct.
+- Precision: Among predicted positives, the fraction that are actually positive.
+- Recall: Among actual positives, the fraction correctly detected.
+- F1 score: Harmonic mean of precision and recall.
+
+For regression:
+- MAE: Average absolute prediction error.
+- MSE: Average squared prediction error.
+- RMSE: Square root of MSE, expressed in the target's units.
+
+Accuracy can be misleading for highly imbalanced classification problems, such as detecting rare fraud.
+
+Gradient Descent and Learning Rate
+----------------------------------
+Many models minimize a loss function that measures prediction error. Gradient descent updates parameters in a direction that tends to reduce the loss. The learning rate controls the step size: too large may make training unstable, while too small may make training slow.
+
+Hyperparameters vs Parameters
+-----------------------------
+Model parameters are learned from data, such as linear regression coefficients. Hyperparameters are chosen before or during model selection, such as a tree's maximum depth or a neural network's learning rate.
+
+Feature Scaling and Encoding
+----------------------------
+Some algorithms benefit from standardized numeric features. Categorical features may need encoding, such as one-hot encoding. Preprocessing should be learned from training data to prevent leakage.
+
+Python Libraries for Machine Learning
+-------------------------------------
+- NumPy: Numeric arrays and mathematical operations.
+- pandas: Tabular data manipulation.
+- scikit-learn: Classical ML models, preprocessing, and evaluation.
+- PyTorch: Tensor operations and neural network training.
+- Matplotlib: Data visualization.
+
+Example: A Simple Classification Model
+--------------------------------------
+The following standalone example uses scikit-learn's built-in iris dataset.
+
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, predictions))
+
+Machine Learning vs Deep Learning
+---------------------------------
+Deep learning is a subset of machine learning that uses neural networks with multiple layers. Classical machine learning often works well with smaller structured datasets, while deep learning is widely used for language, audio, and image tasks.
+
+Machine Learning in RAG Systems
+-------------------------------
+Retrieval-Augmented Generation (RAG) uses retrieval to supply relevant external information to a language model. Embedding models map text to numerical vectors so semantically similar passages can be retrieved. Retrieval quality can be measured with metrics such as recall@k and precision@k. Generation quality should be evaluated separately for factual correctness, relevance, and whether answers are supported by retrieved passages.
+
+Example Questions for RAG Testing
+---------------------------------
+Q: What is machine learning?
+A: A field of AI in which models learn patterns from data to make predictions or decisions.
+
+Q: What is the difference between regression and classification?
+A: Regression predicts numeric values, while classification predicts categories.
+
+Q: What is overfitting?
+A: Learning training-specific details that do not generalize well to unseen data.
+
+Q: What is data leakage?
+A: When information unavailable at prediction time improperly enters the training or evaluation process.
+
+Q: What is the purpose of a test set?
+A: To estimate performance on unseen data after the modeling choices have been made.
+
+Q: What does precision measure?
+A: The proportion of predicted positive examples that are actually positive.
+
+Q: How are embeddings used in RAG?
+A: They represent text as vectors so a retriever can find semantically relevant passages.
+
+
